@@ -1,0 +1,34 @@
+﻿<f:WindowBase x:Class="prbd_1920_xyy.MainView"
+        x:Name="win"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:f="clr-namespace:PRBD_Framework;assembly=PRBD_Framework"
+        xmlns:p="clr-namespace:prbd_1920_xyy.Properties"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:prbd_1920_xyy"
+        mc:Ignorable="d"
+        Title="My Social Network"
+        MinHeight="600" MinWidth="900"
+        MaxHeight="600" MaxWidth="900"
+        Height="600" Width="900"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="{x:Static p:Resources.Menu_Logout}" Command="{Binding Logout}"/>
+            <MenuItem Header="{x:Static p:Resources.Menu_AskQuestion}" Command="{Binding Ask}"/>
+            <MenuItem Header="{x:Static p:Resources.Menu_TagList}" Command="{Binding TagList}"/>
+        </Menu>
+        <TabControl x:Name="tabControl" Margin="10" Grid.Row="1">
+            <TabItem x:Name="membersTab" Header="{x:Static p:Resources.IndexTabName}">
+                <ContentControl>
+                    <local:IndexView/>
+                </ContentControl>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</f:WindowBase>
